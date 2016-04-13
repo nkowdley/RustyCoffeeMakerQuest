@@ -1,0 +1,6 @@
+[package]
+name = "RustyCoffeeMakerQuest"
+version = "0.1.0"
+authors = ["Neel Kowdley <nkowdley@gmail.com>"]
+
+[dependencies]
