@@ -56,6 +56,20 @@ fn test_get_cream() {
 	assert!(!p.has_coffee);
 	assert!(!p.has_sugar);
 }
+/*
+* Test that get_coffee sets the has_coffee to true
+* Also verify that no other items get set to true
+*/
+#[test]
+fn test_get_coffee() {
+	let mut p = Player::new();
+	p.get_coffee();
+	/*verify the player only has cream*/
+	/*Also try using assert_eq for a false*/
+	assert_eq!(p.has_cream,false);
+	assert_eq!(p.has_coffee,true);
+	assert_eq!(p.has_sugar,false);
+}
 // fn can_win() {
 // 	p.get_cream();
 // 	p.get_coffee();
