@@ -14,12 +14,12 @@ struct Player {
 #[allow(dead_code)]
 impl Player {
 	/*Constructor*/
-   fn new() -> Player {
-	Player {
-		has_cream : false,
-		has_coffee : false,
-		has_sugar : false
-	}
+	fn new() -> Player {
+		Player {
+			has_cream : false,
+			has_coffee : false,
+			has_sugar : false
+		}
 	}
 }
 /*Test Cases*/
