@@ -10,7 +10,7 @@ struct Player {
 	has_coffee: bool,
 	has_sugar:bool
 }
-
+/*implement the player*/
 #[allow(dead_code)]
 impl Player {
 	/*Constructor*/
@@ -22,15 +22,18 @@ impl Player {
 	}
 	}
 }
+/*Test Cases*/
+/*Initial Test Case to prove that Cargo Test works*/
 #[test]
 fn it_works() {
     assert_eq!(4, 4);
 }
-
+/*Test that the Constructor does everything it needs to*/
 #[test]
 #[should_panic(expected = "assertion failed")] /*Mark that this test case should fail*/
 fn test_constructor() {
 	let p = Player::new();
+	/*Verify the player does not have cream, coffee or sugar*/
 	assert!(p.has_cream);
 	assert!(p.has_coffee);
 	assert!(p.has_sugar);
