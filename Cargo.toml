@@ -1,5 +1,5 @@
 [package]
-name = "RustyCoffeeMakerQuest"
+name = "rusty_coffee_maker_quest"
 version = "0.1.0"
 authors = ["Neel Kowdley <nkowdley@gmail.com>"]
 
