@@ -44,8 +44,14 @@ impl Player {
 		if self.can_win() {
 			message = "You drink the beverage and are ready to study!\nYou Win!".to_string();
 		}
-		else {
+		else if self.has_coffee && self.has_cream && !self.has_sugar {
+			message = "Without sugar, the coffee is too bitter. You cannot study.\nYou lose!".to_string();
+		}
+		else if self.has_coffee && !self.has_cream {
 			message = "Without cream, you get an ulcer and cannot study.\nYou lose!".to_string();
+		}
+		else {
+			message = "".to_string();
 		}
 		message
 	}
@@ -194,4 +200,20 @@ fn test_drink_coffee() {
 	let message:String = p.drink();
 	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
 	assert_eq!(message,"Without cream, you get an ulcer and cannot study.\nYou lose!"); /*verify the message is correct*/
+}
+/*
+* Test that if the player has coffee and cream
+* they cannot win the game, and the correct string is returned
+*/
+#[test]
+fn test_drink_coffee_cream() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get coffee and cream*/
+	p.get_coffee();
+	p.get_cream();
+	/*Drink what you have*/
+	let message:String = p.drink();
+	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
+	assert_eq!(message,"Without sugar, the coffee is too bitter. You cannot study.\nYou lose!"); /*verify the message is correct*/
 }
