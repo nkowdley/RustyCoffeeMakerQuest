@@ -64,7 +64,8 @@ impl Player {
 		}
 		message
 	}
-	pub fn show_inventory(self) --> String {
+	pub fn show_inventory(self) -> String {
+		"".to_string()
 	}
 }
 /*Test Cases*/
@@ -287,7 +288,7 @@ fn test_drink_air() {
 	let mut p = Player::new();
 	/*Drink what you have*/
 	let message:String = p.drink();
-	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
+	assert_eq!(p.can_win(),false); /*Verify the player cantanot win the game*/
 	assert_eq!(message,"You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!"); /*verify the message is correct*/
 }
 
@@ -301,5 +302,5 @@ fn test_show_inventory_nothing() {
 	let mut p = Player::new();
 	/*Drink what you have*/
 	let message:String = p.show_inventory();
-	assert_eq!(message,"You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!"); /*verify the message is correct*/
+	assert_eq!(message,"You do not have any items in your inventory."); /*verify the message is correct*/
 }
