@@ -85,7 +85,7 @@ fn test_get_coffee() {
 #[test]
 fn test_get_sugar() {
 	let mut p = Player::new();
-	p.get_coffee();
+	p.get_sugar();
 	/*verify the player only has sugar*/
 	/*Also try using assert_eq for a false*/
 	assert_eq!(p.has_cream,false);
