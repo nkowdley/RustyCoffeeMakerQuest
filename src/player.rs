@@ -104,7 +104,7 @@ fn test_get_sugar() {
 * they can win the game
 */
 #[test]
-fn can_win() {
+fn test_can_win() {
 	/*initialize the player as mutable*/
 	let mut p = Player::new();
 	/*get all the items*/
@@ -112,4 +112,20 @@ fn can_win() {
 	p.get_coffee();
 	p.get_sugar();
 	assert!(p.can_win());
+}
+/*
+* Test that if the player has all three items
+* they can win the game, and the correct string is returned
+*/
+#[test]
+fn test_drink_win() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get all the items*/
+	p.get_cream();
+	p.get_coffee();
+	p.get_sugar();
+	/*Drink what you have*/
+	let message:String = p.drink();
+	assert!(message,"You drink the beverage and are ready to study!");
 }
