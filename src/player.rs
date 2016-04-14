@@ -40,9 +40,7 @@ impl Player {
 	/*Drink the beverage and get the appropriate message*/
 	pub fn drink(self) -> String {
 		/*if the player can win, return the correct message*/
-		if (self.can_win()) {
-			"You drink the beverage and are ready to study!"
-		}
+		"You drink the beverage and are ready to study!".to_string()
 	}
 }
 /*Test Cases*/
