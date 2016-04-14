@@ -64,6 +64,8 @@ impl Player {
 		}
 		message
 	}
+	pub fn show_inventory(self) --> String {
+	}
 }
 /*Test Cases*/
 /*Initial Test Case to prove that Cargo Test works*/
@@ -286,5 +288,18 @@ fn test_drink_air() {
 	/*Drink what you have*/
 	let message:String = p.drink();
 	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
+	assert_eq!(message,"You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!"); /*verify the message is correct*/
+}
+
+/*
+* Test that if the player has nothing
+* their inventory returns nothing
+*/
+#[test]
+fn test_show_inventory_nothing() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
 	assert_eq!(message,"You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!"); /*verify the message is correct*/
 }
