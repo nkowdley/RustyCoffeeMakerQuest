@@ -33,6 +33,10 @@ impl Player {
 	pub fn get_sugar(&mut self) -> () {
 		self.has_sugar = true
 	}
+	/*Find out if the player can win */
+	pub fn can_win(self) -> bool {
+		self.has_sugar && self.has_coffee && self.has_cream
+	}
 }
 /*Test Cases*/
 /*Initial Test Case to prove that Cargo Test works*/
@@ -101,6 +105,9 @@ fn test_get_sugar() {
 */
 #[test]
 fn can_win() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get all the items*/
 	p.get_cream();
 	p.get_coffee();
 	p.get_sugar();
