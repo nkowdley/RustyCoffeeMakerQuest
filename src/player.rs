@@ -40,7 +40,14 @@ impl Player {
 	/*Drink the beverage and get the appropriate message*/
 	pub fn drink(&mut self) -> String {
 		/*if the player can win, return the correct message*/
-		"You drink the beverage and are ready to study!\nYou Win!".to_string()
+		let mut message:String = "".to_string();
+		if self.can_win() {
+			message = "You drink the beverage and are ready to study!\nYou Win!".to_string();
+		}
+		else {
+			message = "Without cream, you get an ulcer and cannot study.\nYou lose!".to_string();
+		}
+		message
 	}
 }
 /*Test Cases*/
