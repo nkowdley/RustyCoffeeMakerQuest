@@ -37,6 +37,13 @@ impl Player {
 	pub fn can_win(self) -> bool {
 		self.has_sugar && self.has_coffee && self.has_cream
 	}
+	/*Drink the beverage and get the appropriate message*/
+	pub fn drink(self) -> String {
+		/*if the player can win, return the correct message*/
+		if (self.can_win()) {
+			"You drink the beverage and are ready to study!"
+		}
+	}
 }
 /*Test Cases*/
 /*Initial Test Case to prove that Cargo Test works*/
@@ -127,5 +134,5 @@ fn test_drink_win() {
 	p.get_sugar();
 	/*Drink what you have*/
 	let message:String = p.drink();
-	assert!(message,"You drink the beverage and are ready to study!");
+	assert_eq!(message,"You drink the beverage and are ready to study!");
 }
