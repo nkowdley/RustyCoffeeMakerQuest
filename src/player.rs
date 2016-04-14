@@ -25,6 +25,10 @@ impl Player {
 	pub fn get_cream(&mut self) -> () {
 		self.has_cream = true;
 	}
+	/*Set has_coffee to true */
+	pub fn get_coffee(&mut self) -> () {
+		self.has_coffee = true
+	}
 }
 /*Test Cases*/
 /*Initial Test Case to prove that Cargo Test works*/
