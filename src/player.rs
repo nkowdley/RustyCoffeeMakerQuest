@@ -50,6 +50,9 @@ impl Player {
 		else if self.has_coffee {
 			message = "Without sugar, the coffee is too bitter. You cannot study.\nYou lose!".to_string();
 		}
+		else if self.has_cream && !self.has_sugar {
+			message = "You can drink the cream, but without caffeine, you cannot study.\nYou lose!".to_string();
+		}
 		else {
 			message = "".to_string();
 		}
