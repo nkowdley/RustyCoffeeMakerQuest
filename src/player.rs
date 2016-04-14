@@ -29,6 +29,10 @@ impl Player {
 	pub fn get_coffee(&mut self) -> () {
 		self.has_coffee = true
 	}
+	/*Set has_sugar to true */
+	pub fn get_sugar(&mut self) -> () {
+		self.has_sugar = true
+	}
 }
 /*Test Cases*/
 /*Initial Test Case to prove that Cargo Test works*/
@@ -68,11 +72,25 @@ fn test_get_cream() {
 fn test_get_coffee() {
 	let mut p = Player::new();
 	p.get_coffee();
-	/*verify the player only has cream*/
+	/*verify the player only has coffee*/
 	/*Also try using assert_eq for a false*/
 	assert_eq!(p.has_cream,false);
 	assert_eq!(p.has_coffee,true);
 	assert_eq!(p.has_sugar,false);
+}
+/*
+* Test that get_sugar sets the has_sugar to true
+* Also verify that no other items get set to true
+*/
+#[test]
+fn test_get_sugar() {
+	let mut p = Player::new();
+	p.get_coffee();
+	/*verify the player only has sugar*/
+	/*Also try using assert_eq for a false*/
+	assert_eq!(p.has_cream,false);
+	assert_eq!(p.has_coffee,false);
+	assert_eq!(p.has_sugar,true);
 }
 // fn can_win() {
 // 	p.get_cream();
