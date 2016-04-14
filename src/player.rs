@@ -22,7 +22,7 @@ impl Player {
 		}
 	}
 	/*Set has_cream to true*/
-	pub fn get_cream(self) -> () {
+	pub fn get_cream(&mut self) -> () {
 		self.has_cream = true;
 	}
 }
@@ -49,7 +49,7 @@ fn test_constructor() {
 */
 #[test]
 fn test_get_cream() {
-	let p = Player::new();
+	let mut p = Player::new();
 	p.get_cream();
 	/*verify the player only has cream*/
 	assert!(p.has_cream);
