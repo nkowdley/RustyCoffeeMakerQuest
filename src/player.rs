@@ -30,13 +30,25 @@ fn it_works() {
 }
 /*Test that the Constructor does everything it needs to*/
 #[test]
-#[should_panic(expected = "assertion failed")] /*Mark that this test case should fail*/
+#[should_panic(expected = "assertion failed")] /*Mark that this test cases assertions should fail*/
 fn test_constructor() {
 	let p = Player::new();
 	/*Verify the player does not have cream, coffee or sugar*/
 	assert!(p.has_cream);
 	assert!(p.has_coffee);
 	assert!(p.has_sugar);
+}
+
+/*
+* Test that get cream gets the cream and sets the has_cream to true
+* Also verify that no other items get set
+*/
+#[test]
+fn test_get_cream() {
+	let p = Player::new();
+	p.get_cream();
+	assert!(p.has_cream);
+
 }
 // fn can_win() {
 // 	p.get_cream();
