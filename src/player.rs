@@ -47,8 +47,10 @@ fn test_constructor() {
 fn test_get_cream() {
 	let p = Player::new();
 	p.get_cream();
+	/*verify the player only has cream*/
 	assert!(p.has_cream);
-
+	assert!(!p.has_coffee);
+	assert!(!p.has_sugar);
 }
 // fn can_win() {
 // 	p.get_cream();
