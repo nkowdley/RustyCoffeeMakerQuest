@@ -131,6 +131,32 @@ fn test_can_win_cream() {
 	assert_eq!(p.can_win(),false);
 }
 /*
+* Test that if the player has cream and sugar
+* they cannot win the game
+*/
+#[test]
+fn test_can_win_cream_sugar() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream and sugar*/
+	p.get_cream();
+	p.get_sugar();
+	assert_eq!(p.can_win(),false);
+}
+/*
+* Test that if the player has sugar and coffee
+* they cannot win the game
+*/
+#[test]
+fn test_can_win_coffee_sugar() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get coffee and sugar*/
+	p.get_coffee();
+	p.get_sugar();
+	assert_eq!(p.can_win(),false);
+}
+/*
 * Test that if the player has all three items
 * they can win the game, and the correct string is returned
 */
