@@ -64,6 +64,7 @@ fn test_get_cream() {
 	assert!(!p.has_coffee);
 	assert!(!p.has_sugar);
 }
+
 /*
 * Test that get_coffee sets the has_coffee to true
 * Also verify that no other items get set to true
@@ -78,6 +79,7 @@ fn test_get_coffee() {
 	assert_eq!(p.has_coffee,true);
 	assert_eq!(p.has_sugar,false);
 }
+
 /*
 * Test that get_sugar sets the has_sugar to true
 * Also verify that no other items get set to true
@@ -92,9 +94,15 @@ fn test_get_sugar() {
 	assert_eq!(p.has_coffee,false);
 	assert_eq!(p.has_sugar,true);
 }
-// fn can_win() {
-// 	p.get_cream();
-// 	p.get_coffee();
-// 	p.get_sugar();
-// 	assert!(p.can_win());
-// }
+
+/*
+* Test that if the player has all three items,
+* they can win the game
+*/
+#[test]
+fn can_win() {
+	p.get_cream();
+	p.get_coffee();
+	p.get_sugar();
+	assert!(p.can_win());
+}
