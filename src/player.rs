@@ -40,24 +40,27 @@ impl Player {
 	/*Drink the beverage and get the appropriate message*/
 	pub fn drink(&mut self) -> String {
 		/*if the player can win, return the correct message*/
-		let mut message:String = "".to_string();
+		let mut message:String;
 		if self.can_win() {
 			message = "You drink the beverage and are ready to study!\nYou Win!".to_string();
 		}
 		else if self.has_coffee && !self.has_cream {
-			message = "Without cream, you get an ulcer and cannot study.\nYou lose!".to_string();
+			message = "Without cream, you get an ulcer and cannot study.\nYou lose!".to_string(); /*Have just coffee*/
 		}
 		else if self.has_coffee {
-			message = "Without sugar, the coffee is too bitter. You cannot study.\nYou lose!".to_string();
+			message = "Without sugar, the coffee is too bitter. You cannot study.\nYou lose!".to_string(); /*Coffee and cream*/
 		}
 		else if self.has_cream && !self.has_sugar {
-			message = "You can drink the cream, but without caffeine, you cannot study.\nYou lose!".to_string();
+			message = "You can drink the cream, but without caffeine, you cannot study.\nYou lose!".to_string(); /*cream */
 		}
 		else if self.has_cream {
-			message = "You can drink the sweetened cream, but without caffeine, you cannot study.\nYou lose!".to_string();
+			message = "You can drink the sweetened cream, but without caffeine, you cannot study.\nYou lose!".to_string(); /*Cream and sugar*/
+		}
+		else if self.has_sugar {
+			message = "You eat the sugar, but without caffeine, you cannot study.\nYou lose!".to_string(); /*sugar*/
 		}
 		else {
-			message = "".to_string();
+			message = "You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!".to_string();
 		}
 		message
 	}
@@ -240,18 +243,48 @@ fn test_drink_cream() {
 }
 
 /*
-* Test that if the player has cream
+* Test that if the player has cream and sugar
 * they cannot win the game, and the correct string is returned
 */
 #[test]
 fn test_drink_cream_sugar() {
 	/*initialize the player as mutable*/
 	let mut p = Player::new();
-	/*get cream*/
+	/*get cream and sugar*/
 	p.get_cream();
 	p.get_sugar();
 	/*Drink what you have*/
 	let message:String = p.drink();
 	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
 	assert_eq!(message,"You can drink the sweetened cream, but without caffeine, you cannot study.\nYou lose!"); /*verify the message is correct*/
+}
+
+/*
+* Test that if the player has sugar
+* they cannot win the game, and the correct string is returned
+*/
+#[test]
+fn test_drink_sugar() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get sugar*/
+	p.get_sugar();
+	/*Drink what you have*/
+	let message:String = p.drink();
+	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
+	assert_eq!(message,"You eat the sugar, but without caffeine, you cannot study.\nYou lose!"); /*verify the message is correct*/
+}
+
+/*
+* Test that if the player has nothing
+* they cannot win the game, and the correct string is returned
+*/
+#[test]
+fn test_drink_air() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*Drink what you have*/
+	let message:String = p.drink();
+	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
+	assert_eq!(message,"You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!"); /*verify the message is correct*/
 }
