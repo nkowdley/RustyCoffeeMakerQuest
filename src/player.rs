@@ -34,13 +34,13 @@ impl Player {
 		self.has_sugar = true
 	}
 	/*Find out if the player can win */
-	pub fn can_win(self) -> bool {
+	pub fn can_win(&mut self) -> bool {
 		self.has_sugar && self.has_coffee && self.has_cream
 	}
 	/*Drink the beverage and get the appropriate message*/
-	pub fn drink(self) -> String {
+	pub fn drink(&mut self) -> String {
 		/*if the player can win, return the correct message*/
-		"You drink the beverage and are ready to study!".to_string()
+		"You drink the beverage and are ready to study!\nYou Win!".to_string()
 	}
 }
 /*Test Cases*/
@@ -119,6 +119,18 @@ fn test_can_win() {
 	assert!(p.can_win());
 }
 /*
+* Test that if the player has only cream
+* they cannot win the game
+*/
+#[test]
+fn test_can_win_cream() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get only cream*/
+	p.get_cream();
+	assert_eq!(p.can_win(),false);
+}
+/*
 * Test that if the player has all three items
 * they can win the game, and the correct string is returned
 */
@@ -132,5 +144,21 @@ fn test_drink_win() {
 	p.get_sugar();
 	/*Drink what you have*/
 	let message:String = p.drink();
-	assert_eq!(message,"You drink the beverage and are ready to study!");
+	assert!(p.can_win());
+	assert_eq!(message,"You drink the beverage and are ready to study!\nYou Win!");
+}
+/*
+* Test that if the player has only coffee
+* they cannot win the game, and the correct string is returned
+*/
+#[test]
+fn test_drink_coffee() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get only coffee*/
+	p.get_coffee();
+	/*Drink what you have*/
+	let message:String = p.drink();
+	assert_eq!(p.can_win(),false); /*Verify the player cannot win the game*/
+	assert_eq!(message,"Without cream, you get an ulcer and cannot study.\nYou lose!"); /*verify the message is correct*/
 }
