@@ -67,10 +67,16 @@ impl Player {
 	pub fn show_inventory(&self) -> String {
 		let mut message:String = "".to_string();
 		if !self.has_sugar && !self.has_cream && !self.has_coffee {
-			message.push_str("You do not have any items in your inventory.");
+			message.push_str("\nYou do not have any items in your inventory.");
 		}
 		if self.has_cream {
 			message.push_str("\nYou have some fresh cream.");
+		}
+		if self.has_sugar {
+			message.push_str("\nYou have some tasty sugar.");
+		}
+		if self.has_coffee {
+			message.push_str("\nYou have a cup of delicious coffee.");
 		}
 		message
 
@@ -310,11 +316,11 @@ fn test_show_inventory_nothing() {
 	let p = Player::new();
 	/*Drink what you have*/
 	let message:String = p.show_inventory();
-	assert_eq!(message,"You do not have any items in your inventory."); /*verify the message is correct*/
+	assert_eq!(message,"\nYou do not have any items in your inventory."); /*verify the message is correct*/
 }
 /*
-* Test that if the player has nothing
-* their inventory returns nothing
+* Test that if the player has cream
+* their inventory returns cream
 */
 #[test]
 fn test_show_inventory_cream() {
@@ -325,4 +331,79 @@ fn test_show_inventory_cream() {
 	/*Drink what you have*/
 	let message:String = p.show_inventory();
 	assert_eq!(message,"\nYou have some fresh cream."); /*verify the message is correct*/
+}
+/*
+* Test that if the player has coffee
+* their inventory returns coffee
+*/
+#[test]
+fn test_show_inventory_coffee() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream*/
+	p.get_coffee();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
+	assert_eq!(message,"\nYou have a cup of delicious coffee."); /*verify the message is correct*/
+}
+/*
+* Test that if the player has sugar
+* their inventory returns sugar
+*/
+#[test]
+fn test_show_inventory_sugar() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream*/
+	p.get_sugar();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
+	assert_eq!(message,"\nYou have some tasty sugar."); /*verify the message is correct*/
+}
+
+/*
+* Test that if the player has cream and sugar
+* their inventory returns cream and sugar
+*/
+#[test]
+fn test_show_inventory_cream_and_sugar() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream*/
+	p.get_sugar();
+	p.get_cream();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
+	assert_eq!(message,"\nYou have some fresh cream.\nYou have some tasty sugar."); /*verify the message is correct*/
+}
+/*
+* Test that if the player has cream and coffee
+* their inventory returns cream and coffee
+*/
+#[test]
+fn test_show_inventory_cream_and_coffee() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream*/
+	p.get_cream();
+	p.get_coffee();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
+	assert_eq!(message,"\nYou have some fresh cream.\nYou have a cup of delicious coffee."); /*verify the message is correct*/
+}
+/*
+* Test that if the player has cream and coffee
+* their inventory returns cream and coffee
+*/
+#[test]
+fn test_show_inventory_cream_and_coffee_and_sugar() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream*/
+	p.get_cream();
+	p.get_coffee();
+	p.get_sugar();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
+	assert_eq!(message,"\nYou have some fresh cream.\nYou have some tasty sugar.\nYou have a cup of delicious coffee."); /*verify the message is correct*/
 }
