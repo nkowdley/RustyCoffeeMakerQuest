@@ -65,9 +65,12 @@ impl Player {
 		message
 	}
 	pub fn show_inventory(&self) -> String {
-		let mut message:String;
+		let mut message:String = "".to_string();
 		if !self.has_sugar && !self.has_cream && !self.has_coffee {
 			message.push_str("You do not have any items in your inventory.");
+		}
+		else {
+			message.push_str(" ");
 		}
 		message
 
@@ -308,4 +311,18 @@ fn test_show_inventory_nothing() {
 	/*Drink what you have*/
 	let message:String = p.show_inventory();
 	assert_eq!(message,"You do not have any items in your inventory."); /*verify the message is correct*/
+}
+/*
+* Test that if the player has nothing
+* their inventory returns nothing
+*/
+#[test]
+fn test_show_inventory_cream() {
+	/*initialize the player as mutable*/
+	let mut p = Player::new();
+	/*get cream*/
+	p.get_cream();
+	/*Drink what you have*/
+	let message:String = p.show_inventory();
+	assert_eq!(message,"\nYou have some fresh cream."); /*verify the message is correct*/
 }
