@@ -6,7 +6,7 @@ This project was written for CS1632's final deliverable.
 
 ##Build Instructions
 This project was built and tested against Rust 1.8.
-Using any version of Rust either than this is unrecommended.
+Using any version of Rust other than this is unrecommended.
 
 To Run Tests:
 `cargo test`
