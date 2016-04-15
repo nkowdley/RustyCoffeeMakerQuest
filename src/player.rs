@@ -183,6 +183,16 @@ fn test_can_win_cream_sugar() {
 	assert_eq!(p.can_win(),false);
 }
 /*
+* Test that if the player has nothing
+* they cannot win the game
+*/
+#[test]
+fn test_can_win_nothing() {
+	/*initialize the player as mutable*/
+	let p = Player::new();
+	assert_eq!(p.can_win(),false);
+}
+/*
 * Test that if the player has sugar and coffee
 * they cannot win the game
 */
