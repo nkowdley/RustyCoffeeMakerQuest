@@ -69,8 +69,8 @@ impl Player {
 		if !self.has_sugar && !self.has_cream && !self.has_coffee {
 			message.push_str("You do not have any items in your inventory.");
 		}
-		else {
-			message.push_str(" ");
+		if self.has_cream {
+			message.push_str("\nYou have some fresh cream.");
 		}
 		message
 
