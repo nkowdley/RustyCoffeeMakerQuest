@@ -40,7 +40,7 @@ impl Player {
 	/*Drink the beverage and get the appropriate message*/
 	pub fn drink(&self) -> String {
 		/*if the player can win, return the correct message*/
-		let mut message:String;
+		let message:String;
 		if self.can_win() {
 			message = "You drink the beverage and are ready to study!\nYou Win!".to_string();
 		}
@@ -65,7 +65,10 @@ impl Player {
 		message
 	}
 	pub fn show_inventory(&self) -> String {
-		let mut message:String="".to_string(); /*create the inventory string*/
+		let mut message:String;
+		if !self.has_sugar && !self.has_cream && !self.has_coffee {
+			message.push_str("You do not have any items in your inventory.");
+		}
 		message
 
 	}
@@ -286,8 +289,8 @@ fn test_drink_sugar() {
 */
 #[test]
 fn test_drink_air() {
-	/*initialize the player as mutable*/
-	let mut p = Player::new();
+	/*initialize the player*/
+	let p = Player::new();
 	/*Drink what you have*/
 	let message:String = p.drink();
 	assert_eq!(p.can_win(),false); /*Verify the player cantanot win the game*/
@@ -300,8 +303,8 @@ fn test_drink_air() {
 */
 #[test]
 fn test_show_inventory_nothing() {
-	/*initialize the player as mutable*/
-	let mut p = Player::new();
+	/*initialize the player*/
+	let p = Player::new();
 	/*Drink what you have*/
 	let message:String = p.show_inventory();
 	assert_eq!(message,"You do not have any items in your inventory."); /*verify the message is correct*/
