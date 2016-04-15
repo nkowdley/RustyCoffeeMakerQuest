@@ -34,11 +34,11 @@ impl Player {
 		self.has_sugar = true;
 	}
 	/*Find out if the player can win */
-	pub fn can_win(&mut self) -> bool {
+	pub fn can_win(&self) -> bool {
 		self.has_sugar && self.has_coffee && self.has_cream
 	}
 	/*Drink the beverage and get the appropriate message*/
-	pub fn drink(&mut self) -> String {
+	pub fn drink(&self) -> String {
 		/*if the player can win, return the correct message*/
 		let mut message:String;
 		if self.can_win() {
@@ -64,8 +64,10 @@ impl Player {
 		}
 		message
 	}
-	pub fn show_inventory(self) -> String {
-		"".to_string()
+	pub fn show_inventory(&self) -> String {
+		let mut message:String="".to_string(); /*create the inventory string*/
+		message
+
 	}
 }
 /*Test Cases*/
