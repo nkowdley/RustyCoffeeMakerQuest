@@ -35,7 +35,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				room_has_cream: false,
-				room_has_coffee: false,
+				room_has_coffee: true,
 				room_has_sugar: false,
 				description: "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon".to_string(),
 				adj:"Cool-Dude".to_string()
@@ -57,7 +57,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				room_has_cream: false,
-				room_has_coffee: true,
+				room_has_coffee: false,
 				room_has_sugar: false,
 				description:"\"Hackin' Fellow\" on repeat 'cause it's such an amazing song".to_string(),
 				adj:"Smart".to_string()
@@ -105,7 +105,7 @@ impl Room {
 		else if self.room_has_coffee {
 			2
 		}
-		else if self.room_has_cream {
+		else if self.room_has_sugar {
 			3
 		}
 		else {
