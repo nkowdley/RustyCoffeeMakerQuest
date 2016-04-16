@@ -20,7 +20,7 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: false,
-				description: "".to_string(),
+				description: "a statue of Bill Laboon".to_string(),
 				adj:"".to_string()
 			}
 		}
@@ -28,7 +28,7 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
-				description: "".to_string(),
+				description: "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon".to_string(),
 				adj:"".to_string()
 			}
 		}
@@ -36,7 +36,7 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
-				description: "".to_string(),
+				description:  "an autographed photo of Bill Laboon".to_string(),
 				adj:"".to_string()
 			}
 		}
@@ -44,7 +44,7 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
-				description: "".to_string(),
+				description:"\"Hackin' Fellow\" on repeat 'cause it's such an amazing song".to_string(),
 				adj:"".to_string()
 			}
 		}
@@ -52,7 +52,7 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
-				description: "".to_string(),
+				description: "a broken metronome that is constantly on high".to_string(),
 				adj:"".to_string()
 			}
 		}
@@ -60,13 +60,13 @@ impl Room {
 			Room {
 				has_north_door: false,
 				has_south_door: true,
-				description: "".to_string(),
+				description: "A number of Cats from the billion dollar enterprise: Rent A Cat".to_string(),
 				adj:"".to_string()
 			}
 		}
 	}
-
 }
+
 /*Test Cases*/
 /*Verify that all doors have the correct status for the door to the north*/
 #[test]
