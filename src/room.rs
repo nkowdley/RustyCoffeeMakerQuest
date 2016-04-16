@@ -5,7 +5,7 @@
 * File: room.rs
 */
 /*initialize the room struct*/
-struct Room {
+pub struct Room {
 	has_north_door: bool ,
 	has_south_door: bool,
 	room_has_coffee: bool,
