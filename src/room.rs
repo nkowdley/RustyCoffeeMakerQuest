@@ -21,7 +21,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: false,
 				description: "a statue of Bill Laboon".to_string(),
-				adj:"".to_string()
+				adj:"Inspirational".to_string()
 			}
 		}
 		else if room_num==1 {
@@ -29,7 +29,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				description: "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon".to_string(),
-				adj:"".to_string()
+				adj:"Cool-Dude".to_string()
 			}
 		}
 		else if room_num==2 {
@@ -37,7 +37,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				description:  "an autographed photo of Bill Laboon".to_string(),
-				adj:"".to_string()
+				adj:"Chili-Pepper".to_string()
 			}
 		}
 		else if room_num==3 {
@@ -45,7 +45,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				description:"\"Hackin' Fellow\" on repeat 'cause it's such an amazing song".to_string(),
-				adj:"".to_string()
+				adj:"Smart".to_string()
 			}
 		}
 		else if room_num==4 {
@@ -53,7 +53,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				description: "a broken metronome that is constantly on high".to_string(),
-				adj:"".to_string()
+				adj:"Fun".to_string()
 			}
 		}
 		else  {
@@ -61,9 +61,15 @@ impl Room {
 				has_north_door: false,
 				has_south_door: true,
 				description: "A number of Cats from the billion dollar enterprise: Rent A Cat".to_string(),
-				adj:"".to_string()
+				adj:"Hilarious".to_string()
 			}
 		}
+	}
+	pub fn get_north_door(&self) -> bool {
+		self.has_north_door
+	}
+	pub fn get_south_door(&self) -> bool {
+		self.has_south_door
 	}
 }
 
