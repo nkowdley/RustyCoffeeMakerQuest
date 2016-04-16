@@ -27,7 +27,7 @@ impl Room {
 		else if room_num==1 {
 			Room {
 				has_north_door: true,
-				has_south_door: false,
+				has_south_door: true,
 				description: "".to_string(),
 				adj:"".to_string()
 			}
@@ -35,7 +35,7 @@ impl Room {
 		else if room_num==2 {
 			Room {
 				has_north_door: true,
-				has_south_door: false,
+				has_south_door: true,
 				description: "".to_string(),
 				adj:"".to_string()
 			}
@@ -43,7 +43,7 @@ impl Room {
 		else if room_num==3 {
 			Room {
 				has_north_door: true,
-				has_south_door: false,
+				has_south_door: true,
 				description: "".to_string(),
 				adj:"".to_string()
 			}
