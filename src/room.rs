@@ -24,9 +24,41 @@ impl Room {
 				adj:"".to_string()
 			}
 		}
-		else  {
+		else if room_num==1 {
 			Room {
 				has_north_door: true,
+				has_south_door: false,
+				description: "".to_string(),
+				adj:"".to_string()
+			}
+		}
+		else if room_num==2 {
+			Room {
+				has_north_door: true,
+				has_south_door: false,
+				description: "".to_string(),
+				adj:"".to_string()
+			}
+		}
+		else if room_num==3 {
+			Room {
+				has_north_door: true,
+				has_south_door: false,
+				description: "".to_string(),
+				adj:"".to_string()
+			}
+		}
+		else if room_num==4 {
+			Room {
+				has_north_door: true,
+				has_south_door: false,
+				description: "".to_string(),
+				adj:"".to_string()
+			}
+		}
+		else  {
+			Room {
+				has_north_door: false,
 				has_south_door: false,
 				description: "".to_string(),
 				adj:"".to_string()
@@ -36,10 +68,40 @@ impl Room {
 
 }
 /*Test Cases*/
-/*Verify that the starting room(index 0) only has a north door*/
+/*Verify that all doors have the correct status for the door to the north*/
 #[test]
 fn room_0_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(0);
 	assert!(r.has_north_door,true);
+}
+#[test]
+fn room_1_north_door() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert!(r.has_north_door,true);
+}
+#[test]
+fn room_2_north_door() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert!(r.has_north_door,true);
+}
+#[test]
+fn room_3_north_door() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert!(r.has_north_door,true);
+}
+#[test]
+fn room_4_north_door() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert!(r.has_north_door,true);
+}
+#[test]
+fn room_5_north_door() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert!(r.has_north_door,false);
 }
