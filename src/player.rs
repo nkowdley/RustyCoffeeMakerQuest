@@ -5,7 +5,7 @@
 * File: player.rs
 */
 /*Initialize the Player Struct*/
-struct Player {
+pub struct Player {
 	has_cream: bool,
 	has_coffee: bool,
 	has_sugar:bool
