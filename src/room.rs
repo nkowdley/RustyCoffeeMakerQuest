@@ -180,3 +180,40 @@ fn room_5_description() {
 	let r = Room::new(5);
 	assert_eq!(r.description,"A number of Cats from the billion dollar enterprise: Rent A Cat");
 }
+/*Test whether each room has the correct adjective*/
+#[test]
+fn room_0_adj() {
+	/*Allocate a new room*/
+	let r = Room::new(0);
+	assert_eq!(r.adj,"Inspirational");
+}
+#[test]
+fn room_1_adj() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert_eq!(r.adj,"Cool-Dude");
+}
+#[test]
+fn room_2_adj() {
+	/*Allocate a new room*/
+	let r = Room::new(2);
+	assert_eq!(r.adj,"Chili-Pepper");
+}
+#[test]
+fn room_3_adj() {
+	/*Allocate a new room*/
+	let r = Room::new(3);
+	assert_eq!(r.adj,"Smart");
+}
+#[test]
+fn room_4_adj() {
+	/*Allocate a new room*/
+	let r = Room::new(4);
+	assert_eq!(r.adj,"Fun");
+}
+#[test]
+fn room_5_adj() {
+	/*Allocate a new room*/
+	let r = Room::new(5);
+	assert_eq!(r.adj, "Hilarious");
+}
