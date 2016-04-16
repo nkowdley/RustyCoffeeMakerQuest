@@ -99,7 +99,18 @@ impl Room {
 		self.description.to_string()
 	}
 	pub fn get_item(&self) -> i32 {
-		1
+		if self.room_has_cream {
+			1
+		}
+		else if self.room_has_coffee {
+			2
+		}
+		else if self.room_has_cream {
+			3
+		}
+		else {
+			0
+		}
 	}
 }
 
