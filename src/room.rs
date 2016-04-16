@@ -143,3 +143,40 @@ fn room_5_south_door() {
 	let r = Room::new(5);
 	assert!(r.has_south_door);
 }
+/*Test whether each room has the correct descriptionr*/
+#[test]
+fn room_0_description() {
+	/*Allocate a new room*/
+	let r = Room::new(0);
+	assert_eq!(r.description,"a statue of Bill Laboon");
+}
+#[test]
+fn room_1_description() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert_eq!(r.description,"Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon");
+}
+#[test]
+fn room_2_description() {
+	/*Allocate a new room*/
+	let r = Room::new(2);
+	assert_eq!(r.description,"an autographed photo of Bill Laboon");
+}
+#[test]
+fn room_3_description() {
+	/*Allocate a new room*/
+	let r = Room::new(3);
+	assert_eq!(r.description,"\"Hackin' Fellow\" on repeat 'cause it's such an amazing song");
+}
+#[test]
+fn room_4_description() {
+	/*Allocate a new room*/
+	let r = Room::new(4);
+	assert_eq!(r.description,"a broken metronome that is constantly on high");
+}
+#[test]
+fn room_5_description() {
+	/*Allocate a new room*/
+	let r = Room::new(5);
+	assert_eq!(r.description,"A number of Cats from the billion dollar enterprise: Rent A Cat");
+}
