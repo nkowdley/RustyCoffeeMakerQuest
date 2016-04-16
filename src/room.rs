@@ -51,7 +51,7 @@ impl Room {
 		else if room_num==4 {
 			Room {
 				has_north_door: true,
-				has_south_door: false,
+				has_south_door: true,
 				description: "".to_string(),
 				adj:"".to_string()
 			}
@@ -59,7 +59,7 @@ impl Room {
 		else  {
 			Room {
 				has_north_door: false,
-				has_south_door: false,
+				has_south_door: true,
 				description: "".to_string(),
 				adj:"".to_string()
 			}
@@ -73,72 +73,73 @@ impl Room {
 fn room_0_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(0);
-	assert!(r.has_north_door,true);
+	assert!(r.has_north_door);
 }
+
 #[test]
 fn room_1_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(1);
-	assert!(r.has_north_door,true);
+	assert!(r.has_north_door);
 }
 #[test]
 fn room_2_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(2);
-	assert!(r.has_north_door,true);
+	assert!(r.has_north_door);
 }
 #[test]
 fn room_3_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(3);
-	assert!(r.has_north_door,true);
+	assert!(r.has_north_door);
 }
 #[test]
 fn room_4_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(4);
-	assert!(r.has_north_door,true);
+	assert!(r.has_north_door);
 }
 #[test]
 fn room_5_north_door() {
 	/*Allocate a new room*/
 	let r = Room::new(5);
-	assert!(r.has_north_door,false);
+	assert_eq!(r.has_north_door,false);
 }
 /*Test whether each room has the correct status for the south door*/
 #[test]
 fn room_0_south_door() {
 	/*Allocate a new room*/
 	let r = Room::new(0);
-	assert!(r.has_south_door,true);
+	assert_eq!(r.has_south_door,false);
 }
 #[test]
 fn room_1_south_door() {
 	/*Allocate a new room*/
 	let r = Room::new(1);
-	assert!(r.has_south_door,true);
+	assert!(r.has_south_door);
 }
 #[test]
 fn room_2_south_door() {
 	/*Allocate a new room*/
 	let r = Room::new(2);
-	assert!(r.has_south_door,true);
+	assert!(r.has_south_door);
 }
 #[test]
 fn room_3_south_door() {
 	/*Allocate a new room*/
 	let r = Room::new(3);
-	assert!(r.has_south_door,true);
+	assert!(r.has_south_door);
 }
 #[test]
 fn room_4_south_door() {
 	/*Allocate a new room*/
 	let r = Room::new(4);
-	assert!(r.has_south_door,true);
+	assert!(r.has_south_door);
 }
 #[test]
 fn room_5_south_door() {
 	/*Allocate a new room*/
 	let r = Room::new(5);
-	assert!(r.has_south_door,false);
+	assert!(r.has_south_door);
 }
