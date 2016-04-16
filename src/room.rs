@@ -8,6 +8,9 @@
 struct Room {
 	has_north_door: bool ,
 	has_south_door: bool,
+	room_has_coffee: bool,
+	room_has_sugar: bool,
+	room_has_cream: bool,
 	description: String,
 	adj:String
 }
@@ -20,6 +23,9 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: false,
+				room_has_cream: false,
+				room_has_coffee: false,
+				room_has_sugar: false,
 				description: "a statue of Bill Laboon".to_string(),
 				adj:"Inspirational".to_string()
 			}
@@ -28,6 +34,9 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
+				room_has_cream: false,
+				room_has_coffee: false,
+				room_has_sugar: false,
 				description: "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon".to_string(),
 				adj:"Cool-Dude".to_string()
 			}
@@ -36,6 +45,9 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
+				room_has_cream: false,
+				room_has_coffee: false,
+				room_has_sugar: false,
 				description:  "an autographed photo of Bill Laboon".to_string(),
 				adj:"Chili-Pepper".to_string()
 			}
@@ -44,6 +56,9 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
+				room_has_cream: false,
+				room_has_coffee: false,
+				room_has_sugar: false,
 				description:"\"Hackin' Fellow\" on repeat 'cause it's such an amazing song".to_string(),
 				adj:"Smart".to_string()
 			}
@@ -52,6 +67,9 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: true,
+				room_has_cream: false,
+				room_has_coffee: false,
+				room_has_sugar: false,
 				description: "a broken metronome that is constantly on high".to_string(),
 				adj:"Fun".to_string()
 			}
@@ -60,6 +78,9 @@ impl Room {
 			Room {
 				has_north_door: false,
 				has_south_door: true,
+				room_has_cream: false,
+				room_has_coffee: false,
+				room_has_sugar: false,
 				description: "A number of Cats from the billion dollar enterprise: Rent A Cat".to_string(),
 				adj:"Hilarious".to_string()
 			}
@@ -76,6 +97,9 @@ impl Room {
 	}
 	pub fn get_description(&self) -> String {
 		self.description.to_string()
+	}
+	pub fn get_item(&self) -> i32 {
+		1
 	}
 }
 
@@ -96,6 +120,7 @@ fn room_1_north_door() {
 	assert!(r.has_north_door);
 	assert!(r.get_north_door())
 }
+
 #[test]
 fn room_2_north_door() {
 	/*Allocate a new room*/
@@ -255,4 +280,59 @@ fn room_5_adj() {
 	let r = Room::new(5);
 	assert_eq!(r.adj, "Hilarious");
 	assert_eq!(r.get_adj(),"Hilarious");
+}
+/*verify the contructor and the getter for items return the correct object*/
+#[test]
+fn room_0_item() {
+	/*Allocate a new room*/
+	let r = Room::new(0);
+	assert_eq!(r.room_has_cream,true);
+	assert_eq!(r.room_has_coffee,false);
+	assert_eq!(r.room_has_sugar,false);
+	assert_eq!(r.get_item(),1);
+}
+#[test]
+fn room_1_item() {
+	/*Allocate a new room*/
+	let r = Room::new(1);
+	assert_eq!(r.room_has_cream,false);
+	assert_eq!(r.room_has_coffee,true);
+	assert_eq!(r.room_has_sugar,false);
+	assert_eq!(r.get_item(),1);
+}
+#[test]
+fn room_2_item() {
+	/*Allocate a new room*/
+	let r = Room::new(2);
+	assert_eq!(r.room_has_cream,false);
+	assert_eq!(r.room_has_coffee,false);
+	assert_eq!(r.room_has_sugar,false);
+	assert_eq!(r.get_item(),1);
+}
+#[test]
+fn room_3_item() {
+	/*Allocate a new room*/
+	let r = Room::new(3);
+	assert_eq!(r.room_has_cream,false);
+	assert_eq!(r.room_has_coffee,false);
+	assert_eq!(r.room_has_sugar,false);
+	assert_eq!(r.get_item(),1);
+}
+#[test]
+fn room_4_item() {
+	/*Allocate a new room*/
+	let r = Room::new(4);
+	assert_eq!(r.room_has_cream,false);
+	assert_eq!(r.room_has_coffee,false);
+	assert_eq!(r.room_has_sugar,false);
+	assert_eq!(r.get_item(),1);
+}
+#[test]
+fn room_5_item() {
+	/*Allocate a new room*/
+	let r = Room::new(5);
+	assert_eq!(r.room_has_cream,false);
+	assert_eq!(r.room_has_coffee,false);
+	assert_eq!(r.room_has_sugar,true);
+	assert_eq!(r.get_item(),1);
 }
