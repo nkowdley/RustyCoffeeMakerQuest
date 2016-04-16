@@ -71,6 +71,9 @@ impl Room {
 	pub fn get_south_door(&self) -> bool {
 		self.has_south_door
 	}
+	pub fn get_adj(&self) -> String {
+		self.adj.to_string()
+	}
 }
 
 /*Test Cases*/
@@ -204,34 +207,40 @@ fn room_0_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(0);
 	assert_eq!(r.adj,"Inspirational");
+	assert_eq!(r.get_adj(),"Inspirational");
 }
 #[test]
 fn room_1_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(1);
 	assert_eq!(r.adj,"Cool-Dude");
+	assert_eq!(r.get_adj(),"Cool-Dude");
 }
 #[test]
 fn room_2_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(2);
 	assert_eq!(r.adj,"Chili-Pepper");
+	assert_eq!(r.get_adj(),"Chili-Pepper");
 }
 #[test]
 fn room_3_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(3);
 	assert_eq!(r.adj,"Smart");
+	assert_eq!(r.get_adj(),"Smart");
 }
 #[test]
 fn room_4_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(4);
 	assert_eq!(r.adj,"Fun");
+	assert_eq!(r.get_adj(),"Fun");
 }
 #[test]
 fn room_5_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(5);
 	assert_eq!(r.adj, "Hilarious");
+	assert_eq!(r.get_adj(),"Hilarious");
 }
