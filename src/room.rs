@@ -17,7 +17,7 @@ impl Room {
 	/*Constructor*/
 	pub fn new(room_num: i32) -> Room {
 		Room {
-			has_north_door: false,
+			has_north_door: true,
 			has_south_door: false,
 			description: "".to_string(),
 			adj:"".to_string()
