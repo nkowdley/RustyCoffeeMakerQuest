@@ -23,7 +23,7 @@ impl Room {
 			Room {
 				has_north_door: true,
 				has_south_door: false,
-				room_has_cream: false,
+				room_has_cream: true,
 				room_has_coffee: false,
 				room_has_sugar: false,
 				description: "a statue of Bill Laboon".to_string(),
@@ -57,7 +57,7 @@ impl Room {
 				has_north_door: true,
 				has_south_door: true,
 				room_has_cream: false,
-				room_has_coffee: false,
+				room_has_coffee: true,
 				room_has_sugar: false,
 				description:"\"Hackin' Fellow\" on repeat 'cause it's such an amazing song".to_string(),
 				adj:"Smart".to_string()
@@ -80,7 +80,7 @@ impl Room {
 				has_south_door: true,
 				room_has_cream: false,
 				room_has_coffee: false,
-				room_has_sugar: false,
+				room_has_sugar: true,
 				description: "A number of Cats from the billion dollar enterprise: Rent A Cat".to_string(),
 				adj:"Hilarious".to_string()
 			}
@@ -298,7 +298,7 @@ fn room_1_item() {
 	assert_eq!(r.room_has_cream,false);
 	assert_eq!(r.room_has_coffee,true);
 	assert_eq!(r.room_has_sugar,false);
-	assert_eq!(r.get_item(),1);
+	assert_eq!(r.get_item(),2);
 }
 #[test]
 fn room_2_item() {
@@ -307,7 +307,7 @@ fn room_2_item() {
 	assert_eq!(r.room_has_cream,false);
 	assert_eq!(r.room_has_coffee,false);
 	assert_eq!(r.room_has_sugar,false);
-	assert_eq!(r.get_item(),1);
+	assert_eq!(r.get_item(),0);
 }
 #[test]
 fn room_3_item() {
@@ -316,7 +316,7 @@ fn room_3_item() {
 	assert_eq!(r.room_has_cream,false);
 	assert_eq!(r.room_has_coffee,false);
 	assert_eq!(r.room_has_sugar,false);
-	assert_eq!(r.get_item(),1);
+	assert_eq!(r.get_item(),0);
 }
 #[test]
 fn room_4_item() {
@@ -325,7 +325,7 @@ fn room_4_item() {
 	assert_eq!(r.room_has_cream,false);
 	assert_eq!(r.room_has_coffee,false);
 	assert_eq!(r.room_has_sugar,false);
-	assert_eq!(r.get_item(),1);
+	assert_eq!(r.get_item(),0);
 }
 #[test]
 fn room_5_item() {
@@ -334,5 +334,5 @@ fn room_5_item() {
 	assert_eq!(r.room_has_cream,false);
 	assert_eq!(r.room_has_coffee,false);
 	assert_eq!(r.room_has_sugar,true);
-	assert_eq!(r.get_item(),1);
+	assert_eq!(r.get_item(),3);
 }
