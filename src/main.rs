@@ -2,6 +2,8 @@
 use std::io;
 use std::io::prelude::*;
 use std::ops::Add::*;
+use std::string::String;
+
 use player::{Player};
 pub mod player;
 use room::{Room};
@@ -26,10 +28,10 @@ fn main() {
 	while run==0
 	{
 		println!("you see a {} room.  You find {} .", house[index as usize].get_adj(), house[index as usize].get_description() );
-
-		let mut input:String = get_user_input();
+		let mut input:str = get_user_input();
 		//Loop until valid command has been given.
-		while !validate_user_input(&input){
+		println!("here is input: {}",input);
+		while validate_user_input(&input){
 			println!("Invalid Command!");
 			input = get_user_input();
 		}
@@ -56,32 +58,34 @@ fn get_user_input() -> String {
 * Validates the users input and converts to uppercase.
 * Returns true if the input is valid else returns false.
 */
-fn validate_user_input(input:&String) -> bool {
+fn validate_user_input(input:& str) -> bool {
 	let mut upper_input = String::new();
-	let N = "N".to_string();
-	let S = "S".to_string();
-	let L = "L".to_string();
-	let I = "I".to_string();
-	let H = "H".to_string();
-	let D = "D".to_string();
+	let n = "N".to_string();
+	let s = "S".to_string();
+	let l = "L".to_string();
+	let i = "I".to_string();
+	let h = "H".to_string();
+	let d = "D".to_string();
 	upper_input = input.to_uppercase();
 	upper_input = upper_input.to_string();
-	if upper_input == N {
+	println!("{:?}",upper_input.to_string()=="N".to_string());
+	if upper_input == "N" {
+		println!("Valid Command!");
 		return true;
 	}
-	else if upper_input == S {
+	else if upper_input == s {
 		return true;
 	}
-	else if upper_input == L {
+	else if upper_input == l {
 		return true;
 	}
-	else if upper_input == I {
+	else if upper_input == i {
 		return true;
 	}
-	else if upper_input == H {
+	else if upper_input == h {
 		return true;
 	}
-	else if upper_input == D {
+	else if upper_input == d {
 		return true;
 	}
 	else{
@@ -96,7 +100,19 @@ fn validate_user_input(input:&String) -> bool {
 * Returns 1 if win condition has been met.
 */
 fn execute_command(command:& String, house:& [Room;6], player:&mut Player, index:&mut usize) -> i32{
-	if command == "N" {
+	println!("We made it!");
+	let n = "N".to_string();
+	let s = "S".to_string();
+	let l = "L".to_string();
+	let i = "I".to_string();
+	let h = "H".to_string();
+	let d = "D".to_string();
+	//let mut command_cpy = String::new();
+	let mut command_cpy = command.to_string();
+	println!("{}",command_cpy==n);
+	println!("{}",*command_cpy==n);
+	if (*command).to_string() == "N" {
+		println!("We Really made it!");
 		*index=*index+1;
 		println!("index is now {}",index);
 		0
