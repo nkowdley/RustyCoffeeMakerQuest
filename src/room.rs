@@ -27,7 +27,7 @@ impl Room {
 				room_has_coffee: false,
 				room_has_sugar: false,
 				description: "a statue of Bill Laboon".to_string(),
-				adj:"Inspirational".to_string()
+				adj:"Very Inspirational".to_string()
 			}
 		}
 		else if room_num==1 {
@@ -254,8 +254,8 @@ fn room_5_description() {
 fn room_0_adj() {
 	/*Allocate a new room*/
 	let r = Room::new(0);
-	assert_eq!(r.adj,"Inspirational");
-	assert_eq!(r.get_adj(),"Inspirational");
+	assert_eq!(r.adj,"Very Inspirational");
+	assert_eq!(r.get_adj(),"Very Inspirational");
 }
 #[test]
 fn room_1_adj() {
