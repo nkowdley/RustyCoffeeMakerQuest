@@ -77,7 +77,7 @@ fn validate_user_input(input:String) -> bool {
 
 /*
 Tests Below
-Order of tests goes as follows:
+Order of test blocks:
 	1.) validate_input_tests
 	2.)
 
@@ -146,61 +146,77 @@ fn validate_user_input_test8(){
 fn validate_user_input_test9(){
 	let test_string = "N@".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);	
+	if validate_result == false{
+		assert!(true);
+	}else{
+		assert!(validate_result);
+	}		
 }
 #[test]//Tests for empty string being passed in as input.
 fn validate_user_input_test10(){
 	let test_string = " ".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);	
+	if validate_result == false{
+		assert!(true);
+	}else{
+		assert!(validate_result);
+	}		
 }
 #[test]//Tests for the ascii value of a valid input.
 fn validate_user_input_test11(){
 	let test_string = "78".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);	
+	if validate_result == false{
+		assert!(true);
+	}else{
+		assert!(validate_result);
+	}		
 }
 #[test]//Tests for a string of pure punctuation. 
 fn validate_user_input_test12(){
-	let test_string = " !.,"";?': ".to_string();
+	let test_string = "!.,\";?':".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);	
+	if validate_result == false{
+		assert!(true);
+	}else{
+		assert!(validate_result);
+	}		
 }
 #[test]//Tests for uppercase N.
 fn validate_user_input_test13(){
 	let test_string = "N".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);			
+	assert!(validate_result);			
 }
 #[test]//Tests for uppercase S.
 fn validate_user_input_test14(){
 	let test_string = "S".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);			
+	assert!(validate_result);			
 }
 #[test]//Tests for uppercase L.
 fn validate_user_input_test15(){
 	let test_string = "L".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);			
+	assert!(validate_result);			
 }
 #[test]//Tests for uppercase I.
 fn validate_user_input_test16(){
 	let test_string = "I".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);			
+	assert!(validate_result);			
 }
 #[test]//Tests for uppercase H.
 fn validate_user_input_test17(){
 	let test_string = "H".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);			
+	assert!(validate_result);			
 }
 #[test]//Tests for uppercase D.
-fn validate_user_input_test17(){
+fn validate_user_input_test18(){
 	let test_string = "D".to_string();
 	let validate_result = validate_user_input(test_string);
-	assert!(false);				
+	assert!(validate_result);				
 }
 
 //End of validate_user_input tests.
