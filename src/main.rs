@@ -7,35 +7,35 @@
 */
 
 /*
-	______          _                          
-	| ___ \        | |                         
-	| |_/ /   _ ___| |_ _   _                  
-	|    / | | / __| __| | | |                 
-	| |\ \ |_| \__ \ |_| |_| |                 
-	\_| \_\__,_|___/\__|\__, |                 
-	                     __/ |                 
-	                    |___/                  
-		      _____        __  __                  
-		     /  __ \      / _|/ _|                 
-		     | /  \/ ___ | |_| |_ ___  ___         
-		     | |    / _ \|  _|  _/ _ \/ _ \        
-		     | \__/\ (_) | | | ||  __/  __/        
-		      \____/\___/|_| |_| \___|\___|        
-		                                           
-                                           
-			           ___  ___      _                 
-			           |  \/  |     | |                
-			           | .  . | __ _| | _____ _ __     
-			           | |\/| |/ _` | |/ / _ \ '__|    
-			           | |  | | (_| |   <  __/ |       
-			           \_|  |_/\__,_|_|\_\___|_|       
-			                                           
-                                           
-				                 _____                 _   
-				                |  _  |               | |  
-				                | | | |_   _  ___  ___| |_ 
+	______          _
+	| ___ \        | |
+	| |_/ /   _ ___| |_ _   _
+	|    / | | / __| __| | | |
+	| |\ \ |_| \__ \ |_| |_| |
+	\_| \_\__,_|___/\__|\__, |
+	                     __/ |
+	                    |___/
+		      _____        __  __
+		     /  __ \      / _|/ _|
+		     | /  \/ ___ | |_| |_ ___  ___
+		     | |    / _ \|  _|  _/ _ \/ _ \
+		     | \__/\ (_) | | | ||  __/  __/
+		      \____/\___/|_| |_| \___|\___|
+
+
+			           ___  ___      _
+			           |  \/  |     | |
+			           | .  . | __ _| | _____ _ __
+			           | |\/| |/ _` | |/ / _ \ '__|
+			           | |  | | (_| |   <  __/ |
+			           \_|  |_/\__,_|_|\_\___|_|
+
+
+				                 _____                 _
+				                |  _  |               | |
+				                | | | |_   _  ___  ___| |_
 				                | | | | | | |/ _ \/ __| __|
-				                \ \/' / |_| |  __/\__ \ |_ 
+				                \ \/' / |_| |  __/\__ \ |_
 				                 \_/\_\\__,_|\___||___/\__|
 	*/
 
@@ -56,7 +56,7 @@ fn main() {
 	println!("Instructions for Coffee Maker Quest - ");
 	println!("You are a brave student trying to study for the final exam in Bill Laboon's Software Testing Class, but you need caffeine.");
 	println!("The goal of the game is to collect sugar, coffee, and cream so that you can study.");
-	
+
 	/*initialize the array of rooms*/
 	let house : [room::Room; 6] = [ room::Room::new(0), room::Room::new(1), room::Room::new(2), room::Room::new(3), room::Room::new(4), room::Room::new(5) ];
 	/*intialize a player*/
@@ -222,38 +222,38 @@ fn execute_command(command:&str, house:& [Room;6], player:&mut Player, index:&mu
 fn validate_user_input_test1() {
 	let test_string = "n".to_string();
 	let validate_result:bool = validate_user_input(&test_string);
-	assert!(validate_result);
+	assert_eq!(validate_result,false);
 }
 #[test]//Tests lowercase s as input
 fn validate_user_input_test2(){
 	let test_string = "s".to_string();
 	let validate_result = validate_user_input(&test_string);
-	assert!(validate_result);
+	assert_eq!(validate_result,false);
 
 }
 #[test]//Tests lowercase l as input.
 fn validate_user_input_test3(){
 	let test_string = "l".to_string();
 	let validate_result = validate_user_input(&test_string);
-	assert!(validate_result);
+	assert_eq!(validate_result,false);
 }
 #[test]//Tests lowercase i as input.
 fn validate_user_input_test4(){
 	let test_string = "i".to_string();
 	let validate_result = validate_user_input(&test_string);
-	assert!(validate_result);
+	assert_eq!(validate_result,false);
 }
 #[test]//Tests lowercase h as input.
 fn validate_user_input_test5(){
 	let test_string = "h".to_string();
 	let validate_result = validate_user_input(&test_string);
-	assert!(validate_result);
+	assert_eq!(validate_result,false);
 }
 #[test]//Tests for lowercase d as input.
 fn validate_user_input_test6(){
 	let test_string = "d".to_string();
 	let validate_result = validate_user_input(&test_string);
-	assert!(validate_result);
+	assert_eq!(validate_result,false);
 }
 #[test]//Tests for a string of numbers.
 fn validate_user_input_test7(){
