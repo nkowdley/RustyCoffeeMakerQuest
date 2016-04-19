@@ -1,3 +1,43 @@
+/*
+* Authors: Neel Kowdley <nkowdley@gmail.com>, David Sweeney <dms163@pitt.edu>
+* Class: CS1632
+* Project: Deliverable 6: CoffeeMakerQuest in Rust
+* File: main.rs
+* Dependencies: player.rs, room.rs
+*/
+
+/*
+	______          _                          
+	| ___ \        | |                         
+	| |_/ /   _ ___| |_ _   _                  
+	|    / | | / __| __| | | |                 
+	| |\ \ |_| \__ \ |_| |_| |                 
+	\_| \_\__,_|___/\__|\__, |                 
+	                     __/ |                 
+	                    |___/                  
+		      _____        __  __                  
+		     /  __ \      / _|/ _|                 
+		     | /  \/ ___ | |_| |_ ___  ___         
+		     | |    / _ \|  _|  _/ _ \/ _ \        
+		     | \__/\ (_) | | | ||  __/  __/        
+		      \____/\___/|_| |_| \___|\___|        
+		                                           
+                                           
+			           ___  ___      _                 
+			           |  \/  |     | |                
+			           | .  . | __ _| | _____ _ __     
+			           | |\/| |/ _` | |/ / _ \ '__|    
+			           | |  | | (_| |   <  __/ |       
+			           \_|  |_/\__,_|_|\_\___|_|       
+			                                           
+                                           
+				                 _____                 _   
+				                |  _  |               | |  
+				                | | | |_   _  ___  ___| |_ 
+				                | | | | | | |/ _ \/ __| __|
+				                \ \/' / |_| |  __/\__ \ |_ 
+				                 \_/\_\\__,_|\___||___/\__|
+	*/
 
 use std::io;
 use std::io::prelude::*;
@@ -7,11 +47,11 @@ pub mod player;
 use room::{Room};
 pub mod room;
 
+
 #[allow(dead_code)]
 fn main() {
 
 	/*Print the welcome message*/
-	println!(" ");
 	println!("Coffee Maker Quest v2.0: The Rusty Coffee Maker");
 	println!("Instructions for Coffee Maker Quest - ");
 	println!("You are a brave student trying to study for the final exam in Bill Laboon's Software Testing Class, but you need caffeine.");
