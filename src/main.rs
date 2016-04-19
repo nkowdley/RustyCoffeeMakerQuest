@@ -38,7 +38,9 @@ fn main() {
 		run = execute_command(&input, & house, &mut p, &mut index );
 	}
 }
+//////////////////
 // End of Main //
+////////////////
 
 /*
 * get_user_input()
@@ -157,8 +159,9 @@ fn execute_command(command:&str, house:& [Room;6], player:&mut Player, index:&mu
 		0
 	}
 }
-
+///////////////////////////////
 //End CoffeeMaker functions //
+/////////////////////////////
 
 /*
 * Tests Below
@@ -167,11 +170,14 @@ fn execute_command(command:&str, house:& [Room;6], player:&mut Player, index:&mu
 *	2.) execute_command_tests
 */
 
+/////////////////////////////////////////
  // Start of the validate_input_tests //
+///////////////////////////////////////
 
 /*
 * 1.) Tests each valid possible input for validate_user_input() and tests potential edge cases.
 */
+
 #[test]//Tests lowercase n as input.
 fn validate_user_input_test1() {
 	let test_string = "n".to_string();
@@ -305,10 +311,13 @@ fn validate_user_input_test18(){
 	let validate_result = validate_user_input(&test_string);
 	assert!(validate_result);
 }
-
+////////////////////////////////////////
 // End of validate_user_input tests. //
+//////////////////////////////////////
 
+/////////////////////////////////////
 // Start of execute_command_tests //
+///////////////////////////////////
 
 /*
 * 2.) Tests each valid possible input for execute_command() and tests potential edge cases.
@@ -381,5 +390,7 @@ fn execute_command_test6(){
 		assert!(false);
 	}
 }
-// End of execute_command_tests //
-// End of Test Blocks //
+////////////////////////////////////
+// End of execute_command_tests ///
+// End of Test Blocks ////////////
+/////////////////////////////////
